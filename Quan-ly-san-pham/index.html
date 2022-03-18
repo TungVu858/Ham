@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p>Add New Product</p>
+    <input type="text" id="name">
+    <button onclick="them()">Thêm</button>
+    <p>Display all products</p>
+</div>
+<div>
+    <table id="displayArena" border="1">
+
+    </table>
+</div>
+<script>
+    let inputName = document.getElementById('name');
+    let displayArena = document.getElementById('displayArena');
+    let list = [];
+    hien();
+
+    function them() {
+        let tenSP = inputName.value;
+        list.push(tenSP);
+        hien()
+    }
+
+    function hien() {
+
+        let str = '    <tr>\n' +
+            '         <td>Product Name</td>\n' +
+            '         <td></td>\n' +
+            '         <td>' + list.length + 'products</td>\n' +
+            '         </tr>';
+        for (let i = 0; i < list.length; i++) {
+            str += '<tr><td>' + list[i] + '</td>' +
+                '<td><button>Edit</button></td>' +
+                '<td><button>Delete</button></td></tr>'
+        }
+        displayArena.innerHTML = str;
+    }
+</script>
+</body>
+</html>
