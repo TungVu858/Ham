@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemtra() {
+        let a = prompt('Nhập mảng');
+        let b = prompt('Nhập 1 kí tự');
+        let count = 0;
+        a = a.split(',');
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] === b) {
+                count++;
+            }
+        }
+        if (count === 0) {
+            count = -1;
+            document.write(b + " không có trong mảng " + '<br>' + count)
+        } else {
+            document.write(b + " có trong mảng " + "<br>" + " số lần có :  " + count);
+        }
+    }
+
+    kiemtra();
+</script>
+</body>
+</html>
