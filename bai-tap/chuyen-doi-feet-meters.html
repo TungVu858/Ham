@@ -10,10 +10,11 @@
        oninput="feetToMeter(this.value)"
        onchange="feetToMeter(this.value)">
 <p>Meter: <span id="outputMeter"></span></p>
+<label>Meter</label>
 <input id="inputMeter" type="number" placeholder="Meter"
        oninput="meterToFeet(this.value)"
        onchange="meterToFeet(this.value)">
-<p>Meter: <span id="outputFeet"></span></p>
+<p>Feet: <span id="outputFeet"></span></p>
 <script>
     function feetToMeter(feet) {
         feet = parseFloat(feet)

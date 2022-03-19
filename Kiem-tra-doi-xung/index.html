@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = 'abc1cba'
+    // let check = 'giống'
+
+    function isPalindrome(s) {
+        // cách bình thường
+        // for (let i = 0; i < arr.length; i++) {
+        //     if (arr[i] !== arr[arr.length - 1 - i]) {
+        //         check = "Không giống";
+        //         break;
+        //     }
+        // }
+        // return check;
+
+        // Cách đệ quy
+        if (s[0] !== s[s.length - 1]) {
+            return 'Không đối xứng';
+        }
+        if (s >= 1) {
+            return "đối xứng";
+        }
+        return isPalindrome(s.substring(1, s.length - 1))
+    }
+
+    document.write(isPalindrome(arr));
+</script>
+</body>
+</html>

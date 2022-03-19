@@ -16,6 +16,7 @@
 
     </table>
 </div>
+<div id="edit"></div>
 <script>
     let inputName = document.getElementById('name');
     let displayArena = document.getElementById('displayArena');
@@ -37,10 +38,19 @@
             '         </tr>';
         for (let i = 0; i < list.length; i++) {
             str += '<tr><td>' + list[i] + '</td>' +
-                '<td><button>Edit</button></td>' +
-                '<td><button>Delete</button></td></tr>'
+                '<td><button onclick="showFormEdit('+i+')">Edit</button></td>' +
+                '<td><button onclick="deleteProduct(' + i + ')">Delete</button></td></tr>'
         }
         displayArena.innerHTML = str;
+    }
+
+    function deleteProduct(inDex) {
+        list.splice(inDex, 1);
+        hien();
+    }
+    function showFormEdit(inDex) {
+        let str ='';
+        str = '<input type="text" id="editProduct"><button>Save</button>';
     }
 </script>
 </body>
